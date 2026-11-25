@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>PhishGuard — Link checker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="PhishGuard home"><span class="brand-icon">⌁</span><span>phish<span class="brand-accent">guard</span></span></a>
+    <span class="top-note"><i></i> Private by design</span>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span class="eyebrow-mark">✳</span> YOUR FIRST LINE OF DEFENSE</div>
+      <h1>Think before you <span>click.</span></h1>
+      <p class="intro">Check a suspicious link for common phishing signals.<br class="desktop-only"> Fast, private, and right here on your device.</p>
+      <form id="check-form" class="search-card">
+        <label for="url-input">PASTE A LINK TO CHECK</label>
+        <div class="input-row">
+          <span class="link-icon" aria-hidden="true">↗</span>
+          <input id="url-input" name="url" type="text" inputmode="url" autocomplete="url" placeholder="https://example.com/login" aria-describedby="privacy-note" required>
+          <button id="check-button" type="submit"><span>Check link</span><span aria-hidden="true">→</span></button>
+        </div>
+        <div class="form-footer"><span id="privacy-note"><span class="lock">▣</span> Your link is analyzed locally and never stored.</span><button class="example-button" type="button" id="example-button">Try an example <span>↗</span></button></div>
+      </form>
+      <p id="error-message" class="error-message" role="alert" hidden></p>
+    </section>
+
+    <section id="result" class="result-card" aria-live="polite" hidden>
+      <div class="result-heading"><div><span class="section-kicker">ANALYSIS RESULT</span><h2 id="result-title">Link assessment</h2></div><button id="clear-button" class="clear-button" type="button" aria-label="Clear result">×</button></div>
+      <div class="result-main">
+        <div id="score-ring" class="score-ring"><div><strong id="score-number">0</strong><small>/ 100</small></div></div>
+        <div class="result-summary"><span id="risk-badge" class="risk-badge">LOWER RISK</span><p id="result-url" class="result-url"></p><p id="result-host" class="result-host"></p></div>
+      </div>
+      <div class="findings-wrap"><h3>What we noticed</h3><ul id="findings-list" class="findings-list"></ul></div>
+      <p id="disclaimer" class="disclaimer"></p>
+    </section>
+
+    <section class="how-section">
+      <div class="section-heading"><span class="section-kicker">SIMPLE. TRANSPARENT. PRIVATE.</span><h2>How it works</h2></div>
+      <div class="steps">
+        <article class="step"><span class="step-number">01</span><div class="step-icon purple">⌕</div><h3>Paste any link</h3><p>Got a strange email or text? Drop the URL in the checker before opening it.</p></article>
+        <article class="step"><span class="step-number">02</span><div class="step-icon blue">⌘</div><h3>We inspect the clues</h3><p>We check URL structure, unusual domains, risky wording, and other common signals.</p></article>
+        <article class="step"><span class="step-number">03</span><div class="step-icon green">✓</div><h3>Make a safer call</h3><p>See the warning signs at a glance. When in doubt, go to the official site directly.</p></article>
+      </div>
+    </section>
+    <aside class="tip"><span class="tip-icon">✦</span><p><strong>Remember:</strong> A familiar logo or a padlock icon doesn't prove a site is legitimate. Check the domain carefully.</p></aside>
+  </main>
+  <footer><span>© 2026 PhishGuard</span><span>Made for safer clicks <span class="heart">♥</span></span></footer>
+</body>
+</html>
+
